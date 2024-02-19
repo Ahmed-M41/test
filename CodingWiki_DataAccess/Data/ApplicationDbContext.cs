@@ -7,10 +7,17 @@ namespace CodingWiki_DataAccess.Data
     {
         public DbSet<Book> Books { get; set; }
 
+        public DbSet<Genre> Genres { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             string connectionString = this.GetConnectionString();
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>().Property(u => u.Price).HasPrecision(10, 5);
         }
 
         private string GetConnectionString()
