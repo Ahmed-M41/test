@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-#nullable disable
+﻿#nullable disable
 
 namespace CodingWiki_DataAccess.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class ChangePriceColumnToDecimalInBookTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
