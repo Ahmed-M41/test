@@ -38,6 +38,23 @@ namespace CodingWiki_DataAccess.Migrations
 
                     b.ToTable("Books");
                 });
+
+            modelBuilder.Entity("CodingWiki_Model.Models.Genre", b =>
+                {
+                    b.Property<int>("GenreId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GenreName")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("GenreId");
+
+                    b.ToTable("Genres");
+                });
 #pragma warning restore 612, 618
         }
     }
